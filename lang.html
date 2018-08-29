@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html >
+    <head>
+    	 <meta charset="UTF-8">
+	    <title>Title</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="google" content="notranslate">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        
+       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.min.js"></script>-->
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>-->
+        <!-- 
+        <script src="https://code.angularjs.org/1.6.4/angular-sanitize.js"></script>
+  		<script src="https://code.angularjs.org/1.6.4/angular-animate.min.js"></script> -->
+     
+    </head>
+    <body ng-app="myApp">
+        <div class="back_img" ng-controller="myCtrl as obj">
+            <!--<button ng-click="clear()" class="clear" translate="clear"></button>-->
+            <div class="history" best-player>
+                <a class="btn hist_butt" ng-click="isActive=!isActive">
+                  <svg width="170" height="37">
+                    <defs>
+                        <linearGradient id="grad1">
+                            <stop offset="0%" stop-color="#fff"/>
+                            <stop offset="100%" stop-color="#fff" />
+                        </linearGradient>
+                    </defs>
+                     <rect x="0" y="0" rx="0" fill="none" stroke="url(#grad1)" width="100%" height="100%"></rect>
+                  </svg>
+                  <span translate="top_player"></span>
+                </a>
+                <div class="cont_hist" ng-class="{'active': isActive}">
+                    
+                </div>
+            </div>
+            <div class="help_wrap">
+                <span href="#" ng-click="obj.takeYourMoney()" class="part_1">
+                    <img src="img/dolar.png" class="img-fluid">
+                    <div class="btn-one">
+                    </div>
+                </span>
+                <span href="#" direct class="hall_call">
+                    <img src="img/hall.png" class="img-fluid">
+                    <div class="btn-two">
+                    </div>
+                </span>
+                <span href="#" ng-click="obj.ToFriend()" class="part_3">
+                    <img src="img/phone.png" class="img-fluid">
+                    <div class="btn-three">
+                    </div>
+                </span>
+                <span href="#"  ng-click="obj.halfTohalf()" class="part_4">
+                    <img src="img/half.png" class="img-fluid">
+                      <div class="btn-four">
+                      </div>
+                </span>
+                
+            </div>
+            <div class="yourHall anotherHall">
+                <div class="common_wrap_hall">
+                    <div class="hall_a">
+                        <span class="precent_a precent"></span>
+                        <p class="background_a"></p>
+                    </div>
+                    <div class="hall_b">
+                        <span class="precent_b precent"></span>
+                        <p class="background_b"></p>
+                    </div>
+                    <div class="hall_c">
+                        <span class="precent_c precent"></span>
+                        <p class="background_c"></p>
+                    </div>
+                    <div class="hall_d">
+                        <span class="precent_d precent"></span>
+                        <p class="background_d"></p>
+                    </div>
+                </div>
+                <div class="letters">
+                    <span translate="a_arm"></span>
+                    <span translate="b_arm"></span>
+                    <span translate="c_arm"></span>
+                    <span translate="d_arm"></span>
+                </div>
+                <div class="animate_dots">
+                    <span class="before_dot"></span>
+                    <span class="after_dot"></span>
+                </div>
+             </div>
+             <div class="your_name after_begin" ng-hide="obj.close_begin">
+                <p class="header_name"><span translate="beg_game"></span> <b>{{name}}</b></p>
+                 <div ><button class="btn" ng-click="obj.clal()" translate="yes_beg"></button></div>
+            </div>
+            <div class="yourSum another_money">
+                <p class="header_name"><span translate="your_sum"></span> <b>{{name}}</b></p>
+                 <div><b>{{obj.finly_sum}} <strong translate="str_dram"></strong></b><img src="img/yourSum.jpg" class="img-fluid" style="max-width:100px; margin-left:20px"></div>
+            </div>
+            <div class="yourWin win_money">
+                <p class="header_name"><span translate="win_you"></span> <b>{{name}}</b></p>
+            </div>
+            <div class="yourFriend anotherfriend">
+                <div class="common_wrap_friend">
+                    <img src="img/iam.jpg">
+                    <div class="calling_div"  to-friend options="friend_opt">
+                        <p class="call_dots">Calling </p>
+                        <p class="call_number">+(374) 98-49-11-**</p>
+                        <p class="definitely"><span translate="definitaly"> </span><b>"{{obj.right_answer}}"</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container top_logo">
+                <div class="row justify-content-center">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2 justify-content-center">
+                        <div class="logo_wrap">
+                            <img src="img/one_logo.png" class="img-fluid logo_circle"> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                        <div class="numbers_wrap" child-element options="dirOptions">
+                            <span class="pointer"></span>
+                            <div class="red_price">
+                                <p>
+                                    <span class="arnging">15</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">5,000000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">14</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">3,000000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">13</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">2,000000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">12</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">1,000000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">11</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">5,00000</span>
+                            </div>
+                            <div class="red_price">
+                                <p>
+                                    <span class="arnging">10</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">250,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">9</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">125,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">8</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">64,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">7</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">32,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">6</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">16,000</span>
+                            </div>
+                            <div class="red_price">
+                                <p>
+                                    <span class="arnging">5</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">8,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">4</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">4,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">3</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">2,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">2</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">1,000</span>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="arnging">1</span>
+                                    <span class="marks"></span>
+                                </p>
+                                <span class="numbers">500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center common_wrap_asks">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="question_wrap" question-warp>
+                            {{obj.quest_arr[0]}}
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-9">
+                        <div class="row justify-content-center sm_none_padd after_show" opt="dirOpt5">
+                            <div class="col-5 col-sm-3 col-md-5 col-lg-5 col-xl-5 ">
+                                <div class="reply_wrap" ng-click="click_val(obj.array[0], 'dirOpt')" asks-one opt="dirOpt" >
+                                <span translate="ans_a"></span> {{obj.array[0]}}
+                                </div>
+                            </div>
+                            <div class="col-5 col-sm-3 col-md-5 col-lg-5 col-xl-5 ">
+                                <div class="reply_wrap1" ng-click="click_val(obj.array[1], 'dirOpt2')" asks-one opt="dirOpt2" >
+                                <span translate="ans_b"></span> {{obj.array[1]}}
+                                </div>
+                            </div>
+                            <div class="col-5 col-sm-3 col-md-5 col-lg-5 col-xl-5 ">
+                                <div class="reply_wrap" ng-click="click_val(obj.array[2], 'dirOpt3')" asks-one opt="dirOpt3" > 
+                                <span translate="ans_c"></span> {{obj.array[2]}}
+                                </div>
+                            </div>
+                            <div class="col-5 col-sm-3 col-md-5 col-lg-5 col-xl-5 ">
+                                <div class="reply_wrap1" ng-click="click_val(obj.array[3], 'dirOpt4')" asks-one opt="dirOpt4" >
+                               <span translate="ans_d"></span> {{obj.array[3]}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="" class="img-fluid bac_img" >
+          
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"> </script>
+    <!--	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="js/app.js"></script>
+    <script src="js/translate.js"></script>
+	</body>
+</html>
+
+

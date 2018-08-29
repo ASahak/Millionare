@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+    <head>
+    	 <meta charset="UTF-8">
+	    <title>Title</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="google" content="notranslate">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.min.js"></script>-->
+<!--        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>-->
+        <!-- 
+        <script src="https://code.angularjs.org/1.6.4/angular-sanitize.js"></script>
+  		<script src="https://code.angularjs.org/1.6.4/angular-animate.min.js"></script> -->
+     
+    </head>
+    <body ng-app="myApp">
+        <div class="container" id="top_angul">
+            <div class="row">
+                <div class="col-sm-12 padd_left">
+                    <h1>Խաղի հեղինակ`</h1>
+                    <h2>Կրտսեր <b> Angular JS </b> ծրագրավորող <em>Արթուր Սահակյան</em></h2>
+                </div>
+                <div class="col-sm-12">
+                    <div class="common_lang"  ng-controller="myCtrl as ctrl">
+                        <div ng-class="progress" class="progg"></div>
+                        <div class="dublicate">
+                            <span class="child_duble"></span>
+                        </div>
+                        <div class="flags_flex" ng-class="myClass">
+                            <label ng-click="myClass='css_animate'; myClass_2='css_animate_2'; progress='ng_progress'">
+                                <img src="img/Armenia.jpg">
+                                <input type="radio" class="radio-btn" name="choice" id="a_1" ng-click="ctrl.isActive()"/>
+                                <label for="a_1" class="label"> <span>Armenian</span></label>
+                            </label>
+                            <label ng-click="myClass='css_animate'; myClass_2='css_animate_2'; progress='ng_progress'" >
+                                <img src="img/englanda.jpg">
+                                <input type="radio" class="radio-btn" name="choice" id="a_2" ng-click="ctrl.isActive1()"/>
+                                <label for="a_2" class="label"><span>English</span></label>
+                            </label>
+                        </div>
+                        <div class="right_wrapper" ng-class="myClass_2">
+                            <a ng-click="myClass=''; myClass_2=''; progress='hide_progg'" class="back"><img src="img/back.png" class="img-fluid"></a>
+                            <div class="users_genger">
+                                <div class="female_wrapper">
+                                    <img src="img/taxjik_profile.png">
+                                    <label ng-click="woman_func()">
+                                        <input type="checkbox" ng-model="status" ng-click="status_2='false'; red_requaired=''">
+                                        <span class="check_img iska-{{status}}" ng-class="red_requaired"></span>
+                                    </label>
+                                </div>
+                                <div class="male_wrapper">
+                                    <img src="img/trxa_profile.png">
+                                    <label ng-click="man_func()">
+                                        <input type="checkbox" ng-model="status_2" ng-click="status='false'; red_requaired=''">
+                                        <span class="check_img iska-{{status_2}}" ng-class="red_requaired"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter_name">
+                                <label>
+                                    <input class="fil_inp" type="text" files-input ng-model="fileList"  ng-keypress="thiss()" name="myName" placeholder="Անուն*"/>
+                                    <button type="submit" ng-click="goTo()" id="toGo">Go!</button>
+                                </label>
+                                <span ng-show="invalid" id="valid">Լրացրե՛ք անվան դաշտը</span>
+                                <ul id="block">
+                                    <li ng-repeat="item in items_arr  | startsWith:fileList" ng-click="thes(item)" ng-model="datark">{{item}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                       
+                        <!--<script type="text/ng-template" id="book">
+                        </script>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    	
+        
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"> </script>
+<!--	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="js/app.js"></script>
+    <script src="js/translate.js"></script>
+    </body>
+</html>
+
+
