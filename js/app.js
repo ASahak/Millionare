@@ -1,7 +1,7 @@
 
 
 
-var app = angular.module("myApp", ['ngStorage', 'ngAnimate', 'pascalprecht.translate']);
+var app = angular.module("myApp", ['ngStorage',  'pascalprecht.translate']);
 app.controller("myCtrl", function($scope, $http, $location, $timeout, $localStorage, $attrs, $translate){
   
     $scope.name = $localStorage.LocalMessage;
